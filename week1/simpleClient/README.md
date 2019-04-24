@@ -2,7 +2,7 @@
 * change to the simpleClient directory with `cd simpleClient`
 * Install the local node_modules directory with `npm install`
 * Run ng application in dev mode with `npm start`
-* Build your code for production with `npm build`
+* Build your code for production with `npm run build`
    <!-- remove the previous dist with `rimraf dist`-->
 * Run karma unit test with `npm test`
 
