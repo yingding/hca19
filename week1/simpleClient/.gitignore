@@ -46,6 +46,7 @@ testem.log
 Thumbs.db
 *.js
 !karma.conf.js
+!src/config/*
 
 # no lock json
 package-lock.json

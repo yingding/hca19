@@ -6,6 +6,10 @@
    <!-- remove the previous dist with `rimraf dist`-->
 * Run karma unit test with `npm test`
 
+# Proxy Settings
+Use proxy settings to access local or remote service with Webpack Dev Server
+* Use `npm run local-proxy` to use the src/config/local.proxy.json setting to access the local proxy for all `^/api/`calls 
+
 # SimpleClient
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.

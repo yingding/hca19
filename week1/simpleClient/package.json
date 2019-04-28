@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 8080",
+    "local-proxy": "ng serve --port 8080 --proxyConfig src/config/local.proxy.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
