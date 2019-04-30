@@ -1,0 +1,8 @@
+<nav class="header">
+  <a class="floatl" routerLink="/home/dashboard" routerLinkActive="active">Dash Board</a>
+  <a class="floatl" routerLink="/home/about" routerLinkActive="active">About</a>
+  <!--
+  <a class="floatr" (click)="logout()">Logout</a> -->
+  <button mat-raised-button class="floatr large" color="primary" (click)="logout()">Logout</button>
+</nav>
+<router-outlet></router-outlet>
