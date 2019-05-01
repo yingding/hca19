@@ -67,3 +67,93 @@ https://angular.io/guide/build#configuring-browser-compatibility)
 * Introduction of [Webpack Dev Server Configuration](https://webpack.js.org/configuration/dev-server/#devserver-proxy)
 
 * Webpack Configuration Parameters on Github <a href="https://github.com/webpack/docs/wiki/configuration" target="_blank">https://github.com/webpack/docs/wiki/configuration</a>
+
+# Project Seed Structure
+
+The following is a snapshot of the current project structure.
+```
+src
+├── app
+│   ├── app-routing.module.ts
+│   ├── app.component.html
+│   ├── app.component.scss
+│   ├── app.component.spec.ts
+│   ├── app.component.ts
+│   ├── app.module.ts
+│   ├── login
+│   │   ├── login.component.html
+│   │   ├── login.component.scss
+│   │   ├── login.component.spec.ts
+│   │   └── login.component.ts
+│   ├── private
+│   │   ├── about
+│   │   │   ├── about.component.html
+│   │   │   ├── about.component.scss
+│   │   │   ├── about.component.spec.ts
+│   │   │   └── about.component.ts
+│   │   ├── binding-examples
+│   │   │   ├── binding-child
+│   │   │   │   ├── binding-child.component.html
+│   │   │   │   ├── binding-child.component.scss
+│   │   │   │   ├── binding-child.component.spec.ts
+│   │   │   │   └── binding-child.component.ts
+│   │   │   ├── binding-examples.component.html
+│   │   │   ├── binding-examples.component.scss
+│   │   │   ├── binding-examples.component.spec.ts
+│   │   │   ├── binding-examples.component.ts
+│   │   │   └── binding-parent
+│   │   │       ├── binding-parent.component.html
+│   │   │       ├── binding-parent.component.scss
+│   │   │       ├── binding-parent.component.spec.ts
+│   │   │       └── binding-parent.component.ts
+│   │   ├── dash-board
+│   │   │   ├── dash-board.component.html
+│   │   │   ├── dash-board.component.scss
+│   │   │   ├── dash-board.component.spec.ts
+│   │   │   └── dash-board.component.ts
+│   │   ├── private-routing.module.ts
+│   │   ├── private.module.ts
+│   │   └── user-home
+│   │       ├── user-home.component.html
+│   │       ├── user-home.component.scss
+│   │       ├── user-home.component.spec.ts
+│   │       └── user-home.component.ts
+│   ├── shared
+│   │   ├── component
+│   │   │   └── page-not-found
+│   │   │       ├── page-not-found.component.html
+│   │   │       ├── page-not-found.component.scss
+│   │   │       ├── page-not-found.component.spec.ts
+│   │   │       └── page-not-found.component.ts
+│   │   ├── dialog
+│   │   │   └── popup-dialog
+│   │   │       ├── popup-dialog.component.html
+│   │   │       ├── popup-dialog.component.scss
+│   │   │       ├── popup-dialog.component.spec.ts
+│   │   │       └── popup-dialog.component.ts
+│   │   └── interface
+│   │       └── dialog-data.ts
+│   └── welcome
+│       ├── welcome.component.html
+│       ├── welcome.component.scss
+│       ├── welcome.component.spec.ts
+│       └── welcome.component.ts
+├── assets
+├── browserslist
+├── config
+│   ├── helpers.js
+│   └── local.proxy.json
+├── environments
+│   ├── environment.prod.ts
+│   └── environment.ts
+├── favicon.ico
+├── index.html
+├── karma.conf.js
+├── main.ts
+├── polyfills.ts
+├── styles.scss
+├── test.ts
+├── tsconfig.app.json
+├── tsconfig.spec.json
+└── tslint.json
+```
