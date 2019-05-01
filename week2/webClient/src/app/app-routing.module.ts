@@ -2,22 +2,27 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 // importing the components
-import {LoginComponent} from "./login/login.component";
-import {WelcomeComponent} from "./welcome/welcome.component";
-import {AppComponent} from "./app.component";
-import {UserHomeComponent} from "./private/user-home/user-home.component";
-// import {UserHomeComponent} from "./private/user-home/user-home.component";
-
+import {LoginComponent} from './login/login.component';
+import {WelcomeComponent} from './welcome/welcome.component';
+import {PageNotFoundComponent} from './shared/component/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/welcome', pathMatch: 'full'}, // Default route
-  //This route redirects a URL that fully matches the empty path to the route whose path is '/welcome'.
+  // This route redirects a URL that fully matches the empty path to the route whose path is '/welcome'.
   {path: 'welcome', component: WelcomeComponent},
   {path: 'login', component: LoginComponent},
-  // {path: 'home', component: UserHomeComponent}, // the private content entry component
-  // {path: '**', component: AppComponent}, // PageNotFound
-  /* while home is not defined in app-routing but in private module routing
-   * localhost:port/home lead to PageNotFound
+  {path: '**', component: PageNotFoundComponent}, // PageNotFound
+  /*
+   * Important:
+   * PrivateModule (submodule with submodule routes) must be place above the AppRoutingModule
+   * in the imports array of the AppModule, since path 'home' is not defined in app-routing.module.ts
+   * instead in the private-routing.module.ts file
+   *
+   * If the AppRoutingModule is place above the PrivateModule in the imports array of the app.module.ts file,
+   * the defined path in the private-routing module will not be recognized
+   * and thus activates the wildcard route in the app-routing.module.ts
+   *
+   * The component PageNotFoundComponent is then activated instead of the desighed UserHomeComponent.
    */
 ];
 

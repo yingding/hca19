@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {MatDialog} from "@angular/material";
-import {PopupDialogComponent} from "../shared/dialog/popup-dialog/popup-dialog.component";
-import {Router} from "@angular/router";
+import {MatDialog} from '@angular/material';
+import {PopupDialogComponent} from '../shared/dialog/popup-dialog/popup-dialog.component';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-welcome',
@@ -20,7 +20,7 @@ export class WelcomeComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(PopupDialogComponent, {
-      width: '250px',
+      width : '250px',
       data : {text: this.success_str}
     });
 
