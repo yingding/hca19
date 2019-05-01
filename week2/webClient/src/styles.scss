@@ -75,3 +75,39 @@ nav.header a.active {
   }*/
 }
 /* -END- Header */
+
+/* css for the sub component in the tree */
+.centered {
+  text-align: center;
+}
+
+.topMargined {
+  margin-top: 50px;
+}
+
+.leftMargined {
+  margin-left: 50px;
+}
+
+
+.input-full-width {
+  width: 100%;
+}
+
+.mid-form-width {
+  min-width: 150px;
+  max-width: 600px;
+  width: 100%;
+}
+
+/* CSS in these files are inlined into the JavaScript.
+ * By default Angular 2+ limits them so they only apply
+ * to the component they belong to.
+ * Look at `encapsulation` if you want to change that.
+ */
+.preformated {
+  border: 1px solid #666;
+  background-color: #eee;
+  border-radius: 4px;
+  padding: 1em;
+}

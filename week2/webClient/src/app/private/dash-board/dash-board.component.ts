@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-dash-board',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashBoardComponent implements OnInit {
 
-  constructor() { }
+  private title: any;
 
-  ngOnInit() {
+  // Requirements: type the content of the value initial in the text box to change the value.
+  // Unfortunately it doesn't work.
+  // TODO: find the bug here.
+  constructor() {
+    const initial = { value: 'Angular 2' };
+    this.title = { initial }; // Object spread in TypeScript 2.1!
   }
 
+  ngOnInit() {
+    console.log('Hello Home component');
+  }
 }

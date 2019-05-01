@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute, Router, ParamMap} from '@angular/router';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-user-home',
@@ -7,10 +8,19 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrls: ['./user-home.component.scss']
 })
 export class UserHomeComponent implements OnInit {
+  private username;
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
+    this.username = this.route.snapshot.paramMap.get('name');
+    /* one time only, if the query param changes,
+     * this.route.paramMap.subscribe or this.route.paramMap.pipe(switchMape()) shall be used.
+     * For more details see https://medium.com/@christo8989/angular-6-url-parameters-860db789db85
+     */
   }
 
   logout(): void {

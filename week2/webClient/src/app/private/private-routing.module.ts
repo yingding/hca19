@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {DashBoardComponent} from "./dash-board/dash-board.component";
 import {AboutComponent} from "./about/about.component";
 import {UserHomeComponent} from "./user-home/user-home.component";
+import {BindingExamplesComponent} from './binding-examples/binding-examples.component';
 
 const privateRoutes: Routes = [
   {
@@ -12,6 +13,7 @@ const privateRoutes: Routes = [
       {path: '', redirectTo: 'dashboard', pathMatch: 'full'}, // uses relative navigation no leading slash
       // references: https://angular.io/guide/router#relative-navigation
       {path: 'dashboard', component: DashBoardComponent},
+      {path: 'bindingexamples', component: BindingExamplesComponent},
       {path: 'about', component: AboutComponent}
       ]
   }
