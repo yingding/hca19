@@ -51,7 +51,9 @@ export class BindingChildComponent implements OnInit, OnChanges {
     }
     // concat multiply changes in log to one string and push as a new log
     // to the global changeLogList
-    if (!needClear || changedProp.isFirstChange) {
+    if (!needClear || changedProp != null && changedProp.isFirstChange) {
+      // Fixed bug if only clearLog change is invoked, the changedProp is null
+      // and changedProp.isFirstChange is breaking the script.
       this.changeLogList.push(log.join(', '));
     } else {
       // clear
