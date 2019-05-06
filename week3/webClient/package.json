@@ -1,6 +1,7 @@
 {
-  "name": "simple-client",
-  "version": "0.0.0",
+  "name": "web-client",
+  "perferGlobal": false,
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 8080",

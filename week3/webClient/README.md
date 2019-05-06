@@ -157,3 +157,9 @@ src
 ├── tsconfig.spec.json
 └── tslint.json
 ```
+
+# Angular Module settings in Intellij
+1. `npm install -g @angular/cli` install angular cli globally
+2. week3 -> add new module -> static web -> angular cli, add webClient as angular module
+3. See more reference about angular cli project in intellij https://www.jetbrains.com/help/idea/angular.html
+
