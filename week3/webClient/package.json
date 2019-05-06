@@ -7,13 +7,13 @@
     "start": "ng serve --port 8080",
     "local-proxy": "ng serve --port 8080 --proxyConfig src/config/local.proxy.json",
     "build": "rimraf $npm_package_buildPath && ng build --outputPath=$npm_package_buildPath",
-    "deploy": "rimraf $npm_package_deployPath && ng build --outputPath=$npm_package_deployPath/public",
+    "deploy": "rimraf $npm_package_deployPath && ng build --outputPath=$npm_package_deployPath",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
   "buildPath": "dist",
-  "deployPath": "../server",
+  "deployPath": "../server/public",
   "comments": "windows use %npm_package_x instead $npm_package_x to reference to a package.json variable, reference: https://stackoverflow.com/questions/43705195/how-can-i-use-variables-in-package-json",
   "private": true,
   "dependencies": {
