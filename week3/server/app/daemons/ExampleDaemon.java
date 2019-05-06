@@ -6,11 +6,13 @@ import com.typesafe.config.Config;
 import play.Logger;
 import play.inject.ApplicationLifecycle;
 
+import javax.inject.Inject;
+import javax.inject.Singleton;
 import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-
+@Singleton
 public class ExampleDaemon extends TemplateDaemon {
     private final static String TAG_key = ExampleDaemon.class.getCanonicalName();
     private static final String delayInterval_key = "exampleDaemon.delay";
@@ -20,6 +22,7 @@ public class ExampleDaemon extends TemplateDaemon {
         super();
     }
 
+    @Inject
     public ExampleDaemon(ActorSystem actor, ApplicationLifecycle lifecycle, final Config appConf) {
         super.init(actor, lifecycle, appConf, TAG_key, delayInterval_key, executionInterval_key);
         setup(delayInterval, executionIntervalInSec, exampleDaemon);

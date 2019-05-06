@@ -10,14 +10,15 @@ import { FormsModule} from '@angular/forms'; // FormsModule is needed for the tw
 // material design
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
-import {MoodModel} from './models/mood-model';
+// import { MoodModel } from './models/mood-model';
 
-import {HttpClientModule} from '@angular/common/http';
+// import {HttpClientModule} from '@angular/common/http';
+import {HttpModule} from '@angular/http';
 import {MoodsService} from './services/moods.service';
 import {SharedRefreshService} from './services/shared-refresh.service';
 
 @NgModule({
-  declarations: [InputRootComponent, InputMoodComponent, MoodModel],
+  declarations: [InputRootComponent, InputMoodComponent],
   imports: [
     CommonModule,
     InputsRoutingModule,
@@ -26,14 +27,15 @@ import {SharedRefreshService} from './services/shared-refresh.service';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    HttpClientModule,
+    // HttpClientModule,
+    HttpModule
   ],
   exports: [
      InputRootComponent
+  ],
+  providers: [
+     MoodsService,
+     SharedRefreshService
   ]
-// providers: [
-  //   MoodsService,
-  //   SharedRefreshService
-  // ]
 })
 export class InputsModule { }

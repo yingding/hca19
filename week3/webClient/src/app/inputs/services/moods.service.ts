@@ -4,9 +4,10 @@ import {Observable} from 'rxjs';
 import { map } from 'rxjs/operators';
 import {MoodModel} from '../models/mood-model';
 
-@Injectable({
-  providedIn: 'root'
-})
+// @Injectable({
+//   providedIn: 'root'
+// })
+@Injectable()
 export class MoodsService {
   private API_URL_GET: string = "api/moods/get/";
   private API_URL_POST: string = "api/moods/post/";

@@ -10,13 +10,14 @@ import play.Logger;
 // import org.slf4j.Logger;
 // import org.slf4j.LoggerFactory;
 
+import play.libs.akka.AkkaGuiceSupport;
 import services.AppConfigService;
 import services.DaemonService;
 
 /**
  * @Author: Yingding Wang on 07.05.17.
  */
-public class AppModule extends AbstractModule {
+public class AppModule extends AbstractModule implements AkkaGuiceSupport {
 
     private final Environment environment;
     private final Config configuration;

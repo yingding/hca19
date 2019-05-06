@@ -7,6 +7,7 @@ import play.Logger;
 import play.inject.ApplicationLifecycle;
 import scala.concurrent.duration.FiniteDuration;
 
+import javax.inject.Inject;
 import java.util.Date;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
@@ -40,7 +41,7 @@ public abstract class TemplateDaemon {
         setup(delayInterval,executionIntervalInSec, templateDaemon);
 
     }
-
+    @Inject
     protected void init(ActorSystem actor, ApplicationLifecycle lifecycle, final Config appConf, String TAG_key, String delayInterval_key, String executionInterval_key) {
         actorSystem = actor;
         tag = TAG_key;
