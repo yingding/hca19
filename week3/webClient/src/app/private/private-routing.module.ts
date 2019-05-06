@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {DashBoardComponent} from "./dash-board/dash-board.component";
-import {AboutComponent} from "./about/about.component";
-import {UserHomeComponent} from "./user-home/user-home.component";
+import {DashBoardComponent} from './dash-board/dash-board.component';
+import {AboutComponent} from './about/about.component';
+import {UserHomeComponent} from './user-home/user-home.component';
 import {BindingExamplesComponent} from './binding-examples/binding-examples.component';
+import {InputRootComponent} from '../inputs/input-root/input-root.component';
 
 const privateRoutes: Routes = [
   {
@@ -14,6 +15,7 @@ const privateRoutes: Routes = [
       // references: https://angular.io/guide/router#relative-navigation
       {path: 'dashboard', component: DashBoardComponent},
       {path: 'bindingexamples', component: BindingExamplesComponent},
+      {path: 'inputsexamples', component: InputRootComponent},
       {path: 'about', component: AboutComponent}
       ]
   }

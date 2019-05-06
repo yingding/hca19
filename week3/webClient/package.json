@@ -13,7 +13,7 @@
     "e2e": "ng e2e"
   },
   "buildPath": "dist",
-  "deployPath": "../server/public",
+  "deployPath": "../server",
   "comments": "windows use %npm_package_x instead $npm_package_x to reference to a package.json variable, reference: https://stackoverflow.com/questions/43705195/how-can-i-use-variables-in-package-json",
   "private": true,
   "dependencies": {
@@ -23,11 +23,13 @@
     "@angular/compiler": "~7.2.14",
     "@angular/core": "~7.2.14",
     "@angular/forms": "~7.2.14",
+    "@angular/http": "~7.2.14",
     "@angular/material": "~7.3.7",
     "@angular/platform-browser": "~7.2.14",
     "@angular/platform-browser-dynamic": "~7.2.14",
     "@angular/router": "~7.2.0",
     "core-js": "^2.5.4",
+    "moment": "^2.24.0",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"

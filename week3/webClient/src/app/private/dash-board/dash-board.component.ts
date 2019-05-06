@@ -13,7 +13,7 @@ export class DashBoardComponent implements OnInit {
   // Unfortunately it doesn't work.
   // TODO: find the bug here.
   constructor() {
-    const initial = { value: 'Angular 2' };
+    const initial = { value: 'Angular 7' };
     this.title = { initial }; // Object spread in TypeScript 2.1!
   }
 

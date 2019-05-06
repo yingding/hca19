@@ -14,6 +14,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { PopupDialogComponent } from './shared/dialog/popup-dialog/popup-dialog.component';
 import { PrivateModule } from './private/private.module';
 import { PageNotFoundComponent } from './shared/component/page-not-found/page-not-found.component';
+import { InputsModule } from './inputs/inputs.module';
 
 @NgModule({
   declarations: [
@@ -31,8 +32,10 @@ import { PageNotFoundComponent } from './shared/component/page-not-found/page-no
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
+    InputsModule,
     PrivateModule,
-    AppRoutingModule, // the subModule with Module routes must be placed above the AppRoutingModule
+    AppRoutingModule,
+    // the subModule with Module routes must be placed above the AppRoutingModule
   ],
   // providers: [{provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}],
   entryComponents: [PopupDialogComponent],

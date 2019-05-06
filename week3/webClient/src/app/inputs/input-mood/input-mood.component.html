@@ -1,0 +1,24 @@
+<mat-form-field>
+  <!-- use # to make ng2 referable to this input element -->
+  <input #moodInput matInput [(ngModel)]="mood" (keydown.enter)="cacheData(moodInput)" placeholder="Enter your mood">
+</mat-form-field>
+<button mat-button (click)="cacheData(moodInput)">klick to cache mood</button>
+<!--
+<button mat-icon-button>
+    <mat-icon aria-label="Example icon-button with a heart icon" (click)="cacheData(moodInput)">cache mood</mat-icon>
+</button>
+-->
+<br>
+<br>
+
+<button mat-raised-button (click)="sendData()">Upload to Server</button>
+<!-- print out the input history -->
+<span *ngIf="responseMessage!=null" [style.background-color]="responseMessageColor">{{responseMessage}}</span>
+
+<!-- print out the input history -->
+<h4>Moods History:</h4>
+<ul>
+  <!-- use the ng7 structure directive to build a list of change-->
+  <li *ngFor="let mood of moods">{{mood | json}}</li>
+</ul>
+
