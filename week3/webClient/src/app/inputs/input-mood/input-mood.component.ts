@@ -25,25 +25,45 @@ export class InputMoodComponent implements OnInit {
   }
 
   cacheData(inputElement: HTMLInputElement) {
+    // clear response message
+    this.responseMessage = null;
+    this.responseMessageColor = null;
+
     // moment format can be found https://momentjs.com/docs/#/displaying/
     const now = moment().format('dddd, MMMM Do YYYY, h:mm:ss a');
     const nowTimeStamp = moment().utc().valueOf();
-    const currentMood = new MoodModel(nowTimeStamp, this.mood.toUpperCase());
-    console.log("currentDateString: ", now);
-    console.log("currentUTCtimestamp: ", currentMood.timestamp);
-    console.log("call service: ", currentMood.mood);
-    this.moods.push(currentMood);
-    inputElement.value = null; // clean the value
+    if (this.mood != "") { // is empty
+      const currentMood = new MoodModel(nowTimeStamp, this.mood.toUpperCase());
+      console.log("currentDateString: ", now);
+      console.log("currentUTCtimestamp: ", currentMood.timestamp);
+      console.log("call service: ", currentMood.mood);
+      this.moods.push(currentMood);
+      inputElement.value = null; // clean the value in the html input
+      this.mood = "";
+    } else {
+      this.responseMessage = "mood is empty";
+      this.responseMessageColor ="yellow";
+    }
+  }
+
+
+  clearCachedMoods() {
+    this.moods = [];
   }
 
   sendData() {
-    this.moodService.sendMoods(this.moods).subscribe(
-      response => this.handleResponse(response),
-      error => this.handleResponse(error)
-    );
-    // refresh is true
-    this.refresh = !this.refresh; // switch
-    this.sharedRefreshService.publishData(this.refresh);
+    if (this.moods.length !== 0) {
+      this.moodService.sendMoods(this.moods).subscribe(
+        response => this.handleResponse(response),
+        error => this.handleResponse(error)
+      );
+      // refresh is true
+      this.refresh = !this.refresh; // switch
+      this.sharedRefreshService.publishData(this.refresh);
+    } else {
+      this.responseMessage = "no moods is stored in local cache";
+      this.responseMessageColor ="yellow";
+    }
   }
 
   handleResponse(response: Response) {

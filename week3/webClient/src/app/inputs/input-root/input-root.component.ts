@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-// import {InputsModule} from '../../inputs.module'; circular dependency
 
 @Component({
   selector: 'app-input-root',
@@ -7,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./input-root.component.scss']
 })
 export class InputRootComponent implements OnInit {
-  private componentName : string;
-  private moduleName : string;
+  private componentName: string;
+  private moduleName: string;
 
   constructor() {
     this.moduleName = "InputsModule";
