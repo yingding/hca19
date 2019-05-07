@@ -3,11 +3,11 @@ import { Http, Response, Headers, RequestOptions} from '@angular/http';
 import {Observable} from 'rxjs';
 import { map } from 'rxjs/operators';
 import {MoodModel} from '../models/mood-model';
+import {InputsModule} from '../inputs.module';
 
-// @Injectable({
-//   providedIn: 'root'
-// })
-@Injectable()
+@Injectable({
+   providedIn: InputsModule
+})
 export class MoodsService {
   private API_URL_GET: string = "api/moods/get/";
   private API_URL_POST: string = "api/moods/post/";

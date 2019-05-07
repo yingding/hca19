@@ -111,3 +111,7 @@ There are several demonstration files available in this template.
 - ExampleFilter.java
 
   A simple filter that adds a header to every response.
+  
+# Reference:
+* [What is new in Play 2.7.x Framework](https://blog.playframework.com/play-2-7-0-is-here/)
+* [Play REST API Examples 2.7.x](https://github.com/playframework/play-samples/tree/2.7.x/play-java-rest-api-example)

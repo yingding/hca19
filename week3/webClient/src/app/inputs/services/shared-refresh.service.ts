@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Subject} from 'rxjs';
+import {InputsModule} from '../inputs.module';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: InputsModule
 })
 export class SharedRefreshService {
 

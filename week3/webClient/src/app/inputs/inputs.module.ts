@@ -10,12 +10,11 @@ import { FormsModule} from '@angular/forms'; // FormsModule is needed for the tw
 // material design
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
-// import { MoodModel } from './models/mood-model';
 
+// import { MoodModel } from './models/mood-model'; // why shouldn't moodModel be declared in the Module?
 // import {HttpClientModule} from '@angular/common/http';
+
 import {HttpModule} from '@angular/http';
-import {MoodsService} from './services/moods.service';
-import {SharedRefreshService} from './services/shared-refresh.service';
 
 @NgModule({
   declarations: [InputRootComponent, InputMoodComponent],
@@ -32,10 +31,6 @@ import {SharedRefreshService} from './services/shared-refresh.service';
   ],
   exports: [
      InputRootComponent
-  ],
-  providers: [
-     MoodsService,
-     SharedRefreshService
   ]
 })
 export class InputsModule { }
