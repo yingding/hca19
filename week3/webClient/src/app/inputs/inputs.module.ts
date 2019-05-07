@@ -16,6 +16,8 @@ import { MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/ma
 
 import {HttpModule} from '@angular/http';
 import { FetchMoodsComponent } from '../inputs/fetch-moods/fetch-moods.component';
+import {MoodsService} from './services/moods.service';
+import {SharedRefreshService} from './services/shared-refresh.service';
 
 @NgModule({
   declarations: [InputRootComponent, InputMoodComponent, FetchMoodsComponent],
@@ -32,6 +34,9 @@ import { FetchMoodsComponent } from '../inputs/fetch-moods/fetch-moods.component
   ],
   exports: [
      InputRootComponent
+  ],
+  providers: [
+    MoodsService, SharedRefreshService
   ]
 })
 export class InputsModule { }
