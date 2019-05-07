@@ -11,15 +11,17 @@ GET     /assets/*file        controllers.Assets.versioned(path="/public/assets",
 # Map js and css files
 GET     /*file               controllers.Assets.versioned(path="/public", file: Asset)
 # Get and post rest api for moods, it is important the url are the same as in the url in client, the last / maybe needed
-# +nocsrf
++nocsrf
 POST    /api/moods/post/         controllers.MoodController.saveMoodInput()
 
 # https://stackoverflow.com/questions/48904971/web-service-on-play-framework-not-accepting-post-message
-# +nocsrf
++nocsrf
 POST    /api/moods/get/          controllers.MoodController.getAllMoods()
 
 #  redirect
-GET /:page  controllers.Application.show(url = "/")
+# GET /$url<.>  controllers.Application.show(url)
+# GET /$url<.*>  controllers.Assets.at(path="/public", file="index.html")
 # GET /:page controllers.Application.show(page)
 # https://www.playframework.com/documentation/2.7.x/JavaRouting
 # https://stackoverflow.com/questions/4283256/how-to-redirect-in-play-framework/17705128#17705128
+# https://en.wikipedia.org/wiki/Regular_expression

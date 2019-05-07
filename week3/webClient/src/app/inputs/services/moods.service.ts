@@ -17,7 +17,7 @@ export class MoodsService {
   }
 
   getMoods(): Observable<MoodModel[]> {
-    const headers = new Headers({'Content-Type': 'application/json'});
+    const headers = new Headers({'Content-Type': 'application/json', 'Authorization': ''});
     const httpOptions = new RequestOptions({headers: headers});
     const body = {
       seed:  "seedToChange",
@@ -29,10 +29,12 @@ export class MoodsService {
       )
     );
   }
-
+  // https://stackoverflow.com/questions/49225275/how-play-sends-csrf-token
+  // https://nvisium.com/blog/2017/10/04/play-2-6-security-analysis.html
+  // https://github.com/angular/angular/issues/25996
   sendMoods(moods: MoodModel[]): Observable<Response> {
     // construct a request header, for json content
-    const headers = new Headers({'Content-Type': 'application/json'});
+    const headers = new Headers({'Content-Type': 'application/json', 'Authorization': ''});
     const httpOptions = new RequestOptions({headers: headers});
     const body = {
       seed:  "seedToChange",
