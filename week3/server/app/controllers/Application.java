@@ -12,9 +12,20 @@ import javax.inject.Singleton;
 @Singleton
 public class Application extends Controller {
 
-    public Result show(String page) {
-        Logger.info(page);
+//    public Result index() {
+//        return redirect("/");
+//    }
+
+    public Result index(String data) {
+        // Logger.info(data);
         return redirect("/");
-        //return redirect(controllers.routes.Assets.at(path="/public", file="index.html")).as("text/html");
     }
+
+//
+//    public Result show(String data) {
+//        Logger.info(data);
+//        return ok("Your data is: " + data).as("text/html");
+//        // return redirect("/");
+//        // return redirect(controllers.routes.Assets.at(path="/public", file="index.html")).as("text/html");
+//    }
 }

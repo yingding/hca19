@@ -57,9 +57,10 @@ export class InputMoodComponent implements OnInit {
         response => this.handleResponse(response),
         error => this.handleResponse(error)
       );
+      // put refresh in side success call back
       // refresh is true
-      this.refresh = !this.refresh; // switch
-      this.sharedRefreshService.publishData(this.refresh);
+      // this.refresh = !this.refresh; // switch
+      // this.sharedRefreshService.publishData(this.refresh);
     } else {
       this.responseMessage = "no moods is stored in local cache";
       this.responseMessageColor ="yellow";
@@ -71,6 +72,11 @@ export class InputMoodComponent implements OnInit {
       this.responseMessage = response.text();
       this.responseMessageColor = 'lawngreen';
       this.moods = []; // clear the moods
+
+      // refresh is true
+      this.refresh = !this.refresh; // switch
+      this.sharedRefreshService.publishData(this.refresh);
+
     } else {
       this.responseMessage = response.text();
       this.responseMessageColor = 'red';
