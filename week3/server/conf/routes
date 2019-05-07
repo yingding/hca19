@@ -22,6 +22,7 @@ GET     /$file<([a-zA-Z0-9\-]*[.])(js|html|ico|js.map)>               controller
 
 # get any string ends with .js .html .ico .js.map
 # https://stackoverflow.com/questions/24636814/regular-expression-only-match-if-string-ends-with-target
+# https://javascript.info/regexp-anchors
 GET     /$file<.*\.(js|html|ico|js\.map)$>               controllers.Assets.versioned(path="/public", file: Asset)
 
 
