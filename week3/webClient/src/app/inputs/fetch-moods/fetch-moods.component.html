@@ -1,0 +1,9 @@
+<div class="topMargined leftMargined">
+  <div>
+    <h4>Moods in the Database:</h4>
+    <ul>
+      <!-- use the ng7 structure directive to build a list of change-->
+      <li *ngFor="let mood of moods | async">{{mood | json}}</li>
+    </ul>
+  </div>
+</div>

@@ -15,9 +15,10 @@ import { MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/ma
 // import {HttpClientModule} from '@angular/common/http';
 
 import {HttpModule} from '@angular/http';
+import { FetchMoodsComponent } from '../inputs/fetch-moods/fetch-moods.component';
 
 @NgModule({
-  declarations: [InputRootComponent, InputMoodComponent],
+  declarations: [InputRootComponent, InputMoodComponent, FetchMoodsComponent],
   imports: [
     CommonModule,
     InputsRoutingModule,
