@@ -1,0 +1,7 @@
+{
+  "host": "",
+  "db": "",
+  "user": "",
+  "password": "",
+  "comment": "this file is used as template file to connect the data base"
+}
