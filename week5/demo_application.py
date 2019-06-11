@@ -119,9 +119,19 @@ define baseline ANN model
 def build_baseline_model(input_dim):
     # create sequential model
     local_model = keras.Sequential()
-    # hidden layer with kernel_initializer to init the default neuron weights https://keras.io/initializers/
+
+    # hidden layer with kernel_initializer to init the default neuron weights
+    # Reference: https://keras.io/initializers/
+    # Kernel initialization | Weights initialization
+
+    # Normal distributed weights
     local_model.add(keras.layers.Dense(13, input_dim=input_dim, kernel_initializer='normal', activation='relu'))
+
+    # All zero initialized weights
+    # local_model.add(keras.layers.Dense(13, input_dim=input_dim, kernel_initializer='zeros', activation='relu'))
+    # output layer
     local_model.add(keras.layers.Dense(1, kernel_initializer='normal'))
+
     # optimizer
     optimizer = tf.keras.optimizers.Adam();
     # optimizer = tf.keras.optimizers.RMSprop(0.001);
@@ -183,7 +193,9 @@ def plot_history(_history):
     plt.ylabel('MSE [Boston Housing]')
     plt.plot(_hist['epoch'], _hist['mean_squared_error'], label='Train Error')
     plt.plot(_hist['epoch'], _hist['val_mean_squared_error'], label='Val Error')
-    plt.ylim([0, 50])
+    # plt.ylim([0, plt.ylim()[1]])
+    # limit the max value of y axis with 100
+    plt.ylim([0,100])
     plt.legend()
     plt.show()
 
