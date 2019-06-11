@@ -19,7 +19,7 @@ pip3 install --no-cache-dir pandas matplotlib tensorflow==1.13.1
 conda install pandas matplotlib tensorflow==1.13.1
 ```
 
-# Run this demo in commandline
+# Run this demo in command line
 ```console
 cd <path>/week5
 python3 demo_application.py
