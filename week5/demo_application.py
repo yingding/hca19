@@ -140,6 +140,8 @@ def build_baseline_model(input_dim):
 
 model = build_baseline_model(train_X.shape[1])
 model.summary()
+# The summary shows 13 x 13 + 1 = 182 Params for the first hidden layer, they are all weight params
+# (13 hidden neuron + 1 bios unit) x 13 Inputs
 
 """
 First testing of Prediction with Random initialized weights
