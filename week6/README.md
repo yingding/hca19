@@ -3,9 +3,9 @@
 
 ## 0.1 (Optional) Installing the libs
 * `npm install highcharts --save`
-* `npm install highcharts-more --save`
-* `npm install highcharts-3d --save`
 * `npm install highcharts-angular --save`
+
+Notice: highcharts-more and highcharts-3d can be directly imported from `highcharts/highcharts-more` and `highcharts/highcharts-3d`, no additional npm package needs to be installed.
 
 ## 0.2 HighCharts Demo
 * https://www.highcharts.com/demo
