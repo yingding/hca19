@@ -33,6 +33,13 @@ Create a submodule:
 Create a chart submodule:
 
 * In folder `webClient` run `ng generate module charts/charts --module app --flat --routing` to generate a charts-routing.module.ts and charts.module.ts in src/app/charts
+* In folder `webClient` run `ng generate component charts/SpiderChart --module charts` to generate a SpiderChartComponent for charts module in folder `src/app/charts/spider-chart/`
+
+Software Libraries:
+* Highcharts: https://www.highcharts.com/demo
+* Highcharts-more (highcharts module)
+* Highcharts-3d (highcharts module)
+* Highcharts-angular: https://github.com/highcharts/highcharts-angular 
 
 ## 2.1 Development server
 

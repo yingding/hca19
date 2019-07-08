@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts'
-// import * as EXPORTING from 'highcharts/modules/exporting'
-// EXPORTING(Highcharts);
+import HC_exporting from 'highcharts/modules/exporting'
+HC_exporting(Highcharts);
 
 // declare var require: any;
 // let Boost = require('highcharts/modules/boost');
@@ -29,7 +29,7 @@ export class LineChartComponent implements OnInit {
 
   ngOnInit() {
     this.chartOptions =  {
-      title : { text : 'simple line chart'},
+      title : { text : this.constructor.name + ': '+ 'simple line chart'},
       credits: {
         enabled: false
       },
