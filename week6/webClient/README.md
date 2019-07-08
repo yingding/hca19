@@ -1,3 +1,32 @@
+# 0 Learning goal of this tutorial
+* Get familiar with different charts
+
+## 0.1 (Optional) Installing the libs
+* `npm install highcharts --save`
+* `npm install highcharts-more --save`
+* `npm install highcharts-3d --save`
+* `npm install highcharts-angular --save`
+
+## 0.2 HighCharts Demo
+* https://www.highcharts.com/demo
+* https://www.highcharts.com/demo/pie-basic
+
+Note: While examining the highcharts demo, open the view options, than copy the options for the chart you are interested.
+
+## 0.3 HighCharts Angular7+ Wrapper Examples
+* [highcharts-angular Wrapper Doc](https://github.com/highcharts/highcharts-angular/blob/master/README.md)
+* [highcharts-angular Blog post: using official wrapper](https://www.highcharts.com/blog/tutorials/highcharts-angular-wrapper/)
+* [highcharts-angular Blog post: fetching data](https://www.highcharts.com/blog/post/highcharts-and-angular-7/)
+
+
+## 0.4 HighChart Offline Export
+* https://www.highcharts.com/docs/export-module/client-side-export
+
+## 0.5 Todo:
+load your data to the plots
+
+
+
 # 1. Introduction of this Angular7 seed in Linux and Macosx
 * change to the simpleClient directory with `cd webClient`
 * Install the local node_modules directory with `npm install`
@@ -95,12 +124,76 @@ The following is a snapshot of the current project structure.
 ```
 src
 ├── app
-│   ├── app-routing.module.ts
 │   ├── app.component.html
 │   ├── app.component.scss
 │   ├── app.component.spec.ts
 │   ├── app.component.ts
 │   ├── app.module.ts
+│   ├── app-routing.module.ts
+│   ├── charts
+│   │   ├── bar-chart
+│   │   │   ├── bar-chart.component.html
+│   │   │   ├── bar-chart.component.scss
+│   │   │   ├── bar-chart.component.spec.ts
+│   │   │   └── bar-chart.component.ts
+│   │   ├── charts.module.ts
+│   │   ├── charts-root
+│   │   │   ├── charts-root.component.html
+│   │   │   ├── charts-root.component.scss
+│   │   │   ├── charts-root.component.spec.ts
+│   │   │   └── charts-root.component.ts
+│   │   ├── charts-routing.module.ts
+│   │   ├── line-chart
+│   │   │   ├── line-chart.component.html
+│   │   │   ├── line-chart.component.scss
+│   │   │   ├── line-chart.component.spec.ts
+│   │   │   └── line-chart.component.ts
+│   │   ├── pie-chart
+│   │   │   ├── pie-chart.component.html
+│   │   │   ├── pie-chart.component.scss
+│   │   │   ├── pie-chart.component.spec.ts
+│   │   │   └── pie-chart.component.ts
+│   │   ├── scatter-plot
+│   │   │   ├── scatter-plot.component.html
+│   │   │   ├── scatter-plot.component.scss
+│   │   │   ├── scatter-plot.component.spec.ts
+│   │   │   └── scatter-plot.component.ts
+│   │   ├── scatter-plot-3d
+│   │   │   ├── scatter-plot-3d.component.html
+│   │   │   ├── scatter-plot-3d.component.scss
+│   │   │   ├── scatter-plot-3d.component.spec.ts
+│   │   │   └── scatter-plot-3d.component.ts
+│   │   └── spider-chart
+│   │       ├── spider-chart.component.html
+│   │       ├── spider-chart.component.scss
+│   │       ├── spider-chart.component.spec.ts
+│   │       └── spider-chart.component.ts
+│   ├── inputs
+│   │   ├── fetch-moods
+│   │   │   ├── fetch-moods.component.html
+│   │   │   ├── fetch-moods.component.scss
+│   │   │   ├── fetch-moods.component.spec.ts
+│   │   │   └── fetch-moods.component.ts
+│   │   ├── input-mood
+│   │   │   ├── input-mood.component.html
+│   │   │   ├── input-mood.component.scss
+│   │   │   ├── input-mood.component.spec.ts
+│   │   │   └── input-mood.component.ts
+│   │   ├── input-root
+│   │   │   ├── input-root.component.html
+│   │   │   ├── input-root.component.scss
+│   │   │   ├── input-root.component.spec.ts
+│   │   │   └── input-root.component.ts
+│   │   ├── inputs.module.ts
+│   │   ├── inputs-routing.module.ts
+│   │   ├── models
+│   │   │   ├── mood-model.spec.ts
+│   │   │   └── mood-model.ts
+│   │   └── services
+│   │       ├── moods.service.spec.ts
+│   │       ├── moods.service.ts
+│   │       ├── shared-refresh.service.spec.ts
+│   │       └── shared-refresh.service.ts
 │   ├── login
 │   │   ├── login.component.html
 │   │   ├── login.component.scss
@@ -132,8 +225,13 @@ src
 │   │   │   ├── dash-board.component.scss
 │   │   │   ├── dash-board.component.spec.ts
 │   │   │   └── dash-board.component.ts
-│   │   ├── private-routing.module.ts
+│   │   ├── plotting-example
+│   │   │   ├── plotting-example.component.html
+│   │   │   ├── plotting-example.component.scss
+│   │   │   ├── plotting-example.component.spec.ts
+│   │   │   └── plotting-example.component.ts
 │   │   ├── private.module.ts
+│   │   ├── private-routing.module.ts
 │   │   └── user-home
 │   │       ├── user-home.component.html
 │   │       ├── user-home.component.scss
